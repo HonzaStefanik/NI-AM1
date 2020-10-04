@@ -1,14 +1,14 @@
-= HW1 - Integration Issues - Transformation of formats
+# HW1 - Integration Issues - Transformation of formats
 
-== Task
+## Task
 Suppose that a customer of a travel agency submits his booking for a tour as a plain text (e.g. submissions via mail). In order to properly process such input in any system, a machine readable and standardized format is needed.
 
-== Data
+## Data
 
 Implement a simple transformation in Java (simple microservice) that reads the first data format (“Data format 1”) and exports/prints the second format ("Data format 2).
  All inputs and outputs can be represented as String (or files).
  
-=== Data format 1:
+### Data format 1:
 
 ```
 Dear Sir or Madam,
@@ -25,7 +25,7 @@ Regards,
 Jan Novak
 ```
 
-=== Data format 2
+### Data format 2
 
 ```
 {
@@ -38,7 +38,7 @@ Jan Novak
 }
 ```
 
-= Solution
+# Solution
 
 The application can be built by running `mvn clean package`, which also verifies tests passing.
 

@@ -1,10 +1,10 @@
-= HW2
+# HW2
 
-== Tasks
+## Tasks
 
-=== Telnet
+### Telnet
 
-==== Assignment
+#### Assignment
 
 * create HTTP GET request using telnet to url http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/httpTelnet1 with following specification:
     - user agent - fit-telnet
@@ -15,7 +15,7 @@
     - content type application/x-www-form-urlencoded
     - send data in format data=fit    
     
-==== Solution 
+#### Solution 
 
 
 ```$ telnet 147.32.233.18 8888
@@ -62,9 +62,13 @@ OK
 
 ```
 
-==== Task
+### cURL
 
-==== Solution
+#### Assignment
+
+* Open this page and follow instructions http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol
+
+#### Solution
 
 ```
 $ curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/welcome
