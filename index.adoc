@@ -1,7 +1,7 @@
 = Homework 
 
-* xref:01/index#[]
-* xref:02/index.md#[]
+* xref:01/index.md#[1. Integration Issues - Transformation of formats]
+* xref:02/index.md#[2. HTTP Application Protocol - telnet, openssl, cURL]
 * xref:03/index#[]
 * xref:04/index#[]
 * xref:05/index#[]
