@@ -68,6 +68,8 @@ Here is the SOAP format to perform these operations
  
 SoapUI was used to test the application. There are 2 test cases to cover valid data and invalid data inputs.
 
+The exported SoapUI project can be found [in the results directory](results/am1_04-soapui-project.xml)
+
 Both test cases can be seen in the following picture
 
 ![image](src/test/resources/soapui_test_cases.png)  

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="fe07661d-96b9-491a-8d04-1cebf042ff98" activeEnvironment="Default" name="am1_04" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b2512c7c-cc18-4ca0-b214-6fb012fe5f74" wsaVersion="NONE" name="PaymentPortSoap11" type="wsdl" bindingName="{http://localhost/}PaymentPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/payment.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/payment.wsdl"><con:part><con:url>http://localhost:8080/ws/payment.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://localhost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://localhost/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="deletePaymentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deletePaymentResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addPaymentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="payment" type="tns:payment"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addPaymentResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPaymentsRequest">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPaymentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="payments" type="tns:payment"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="payment">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="cardNumber" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="cardOwner" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addPaymentRequest">
+    <wsdl:part element="tns:addPaymentRequest" name="addPaymentRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePaymentRequest">
+    <wsdl:part element="tns:deletePaymentRequest" name="deletePaymentRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPaymentResponse">
+    <wsdl:part element="tns:addPaymentResponse" name="addPaymentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaymentsResponse">
+    <wsdl:part element="tns:getPaymentsResponse" name="getPaymentsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaymentsRequest">
+    <wsdl:part element="tns:getPaymentsRequest" name="getPaymentsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePaymentResponse">
+    <wsdl:part element="tns:deletePaymentResponse" name="deletePaymentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PaymentPort">
+    <wsdl:operation name="addPayment">
+      <wsdl:input message="tns:addPaymentRequest" name="addPaymentRequest"></wsdl:input>
+      <wsdl:output message="tns:addPaymentResponse" name="addPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePayment">
+      <wsdl:input message="tns:deletePaymentRequest" name="deletePaymentRequest"></wsdl:input>
+      <wsdl:output message="tns:deletePaymentResponse" name="deletePaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPayments">
+      <wsdl:input message="tns:getPaymentsRequest" name="getPaymentsRequest"></wsdl:input>
+      <wsdl:output message="tns:getPaymentsResponse" name="getPaymentsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentPortSoap11" type="tns:PaymentPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPayment">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addPaymentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPaymentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePayment">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deletePaymentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePaymentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPayments">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPaymentsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPaymentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentPortService">
+    <wsdl:port binding="tns:PaymentPortSoap11" name="PaymentPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="7ac65321-33b7-41dc-83a8-cc7b0f5431fe" isOneWay="false" action="" name="addPayment" bindingOperationName="addPayment" type="Request-Response" outputName="addPaymentResponse" inputName="addPaymentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="53b52b80-33d2-4d13-b2bc-e3b5c0006099" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addPaymentRequest>
+         <loc:payment>
+            <loc:cardNumber>?</loc:cardNumber>
+            <loc:cardOwner>?</loc:cardOwner>
+            <loc:id>?</loc:id>
+         </loc:payment>
+      </loc:addPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/PaymentPort/addPaymentRequest"/></con:call></con:operation><con:operation id="4221e322-54f7-43d7-9bf2-5f8b5f7a314c" isOneWay="false" action="" name="deletePayment" bindingOperationName="deletePayment" type="Request-Response" outputName="deletePaymentResponse" inputName="deletePaymentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cf0fd5bc-47d2-40d6-a4f7-7abb10d0de16" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deletePaymentRequest>
+         <loc:id>?</loc:id>
+      </loc:deletePaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/PaymentPort/deletePaymentRequest"/></con:call></con:operation><con:operation id="d4b51d71-8c95-4761-b10a-3daa93068df9" isOneWay="false" action="" name="getPayments" bindingOperationName="getPayments" type="Request-Response" outputName="getPaymentsResponse" inputName="getPaymentsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f561be7f-644e-4f3e-8c4c-5115d1ac747e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/PaymentPort/getPaymentsRequest"/></con:call></con:operation></con:interface><con:testSuite id="e649fcdd-fb36-47e9-b917-7084463de08a" name="test"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a52e64f0-bbc8-49e1-b514-5f4319ef0584" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addValidPayment" searchProperties="true"><con:settings/><con:testStep type="request" name="getInitialState" id="bfcf5026-be6e-4698-83d1-ad75dcbb4082"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getInitialState" id="714ec4f8-ef74-4c3b-bb28-19f530221c25"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ee851cc0-dd5e-4f6c-bb7d-44908bb8dcdb"/><con:assertion type="Simple Contains" id="44843fa3-b1d0-425e-ad02-8c890ee2c003" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="addValidPayment" id="4b1b6bff-d738-426f-bf51-7301f4afcbd8"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>addPayment</con:operation><con:request name="addValidPayment" id="8f80db1b-35a8-4e78-979b-96fec3c063b9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addPaymentRequest>
+         <loc:payment>
+            <loc:cardNumber>1234-1234-1234-1234</loc:cardNumber>
+            <loc:cardOwner>CardOwner</loc:cardOwner>
+            <loc:id>1</loc:id>
+         </loc:payment>
+      </loc:addPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="81bd8120-50c3-42aa-8201-fdd5f584acb5"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getNewState" id="3d6dbde9-4e78-48f5-b008-c2274aed095e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getNewState" id="8219c9c3-43d3-4d5b-857e-caffd63420fe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="74cd91cb-6fee-4094-8e33-ffec3db27232"/><con:assertion type="Simple Contains" id="698e58c0-ac7f-4c12-9a4e-66af2c768020" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/">
+         <ns2:payments>
+            <ns2:cardNumber>1234-1234-1234-1234</ns2:cardNumber>
+            <ns2:cardOwner>CardOwner</ns2:cardOwner>
+            <ns2:id>1</ns2:id>
+         </ns2:payments>
+      </ns2:getPaymentsResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="deletePayment" id="d8019291-7f90-46e4-afec-a3080e1b82ee"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>deletePayment</con:operation><con:request name="deletePayment" id="6cf0a9ac-f1e8-412f-b2e0-138f298a3c95"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deletePaymentRequest>
+         <loc:id>1</loc:id>
+      </loc:deletePaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9e9e0ac3-86b5-4c77-ada3-6c77955db366"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getFinalState" id="b6af4787-a860-4f3e-ad9f-99797e5a073e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getFinalState" id="81766846-7629-441a-b917-1527d3a4c832"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a0282c85-477b-4960-92cc-8e3a3e8a6ea3"/><con:assertion type="Simple Contains" id="6fdbfdb9-a20a-4220-8ff5-ba5ce87090ef" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="658a3715-5156-4a02-a07d-b02596654300" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addInvalidpayment" searchProperties="true"><con:settings/><con:testStep type="request" name="getInitialState" id="0b89c80f-b9dd-4e3c-8942-c898081fe92b"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getInitialState" id="d231f862-24ad-4333-bd8f-d2d3f0483b4c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="86ad97a0-e069-467a-9d6d-fb787eb476a5"/><con:assertion type="Simple Contains" id="8690cb2d-befa-4761-b780-39e8a756f445" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="addInvalidOwner" id="47c7c096-f979-44ae-b149-9426a8a7e97a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>addPayment</con:operation><con:request name="addInvalidOwner" id="1d1955de-26e9-400b-9658-656828a21785"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addPaymentRequest>
+         <loc:payment>
+            <loc:cardNumber>1234-1234-1234-1234</loc:cardNumber>
+            <loc:cardOwner>invalidOwner</loc:cardOwner>
+            <loc:id>10</loc:id>
+         </loc:payment>
+      </loc:addPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9ace421e-2fb8-42bc-b9b2-93d1006d47f0"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getStateAfterInvalidOwner" id="6abb5e2d-7d4e-459b-a2d0-34a9896b7e99"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getStateAfterInvalidOwner" id="63fe955b-4bcc-4810-ad5a-8ab82a145f4e"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d50b4808-aaa4-43a4-a007-5da792cded7e"/><con:assertion type="Simple Contains" id="dd722582-ba2a-44ac-9263-a80dbae2d7d5" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="addInvalidNumber" id="b4f1bf13-c68a-494c-a513-9fff18f7bd8f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>addPayment</con:operation><con:request name="addInvalidNumber" id="6d5cff26-e979-45fb-abef-86aa5e594816"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addPaymentRequest>
+         <loc:payment>
+            <loc:cardNumber>42</loc:cardNumber>
+            <loc:cardOwner>CardOwner</loc:cardOwner>
+            <loc:id>20</loc:id>
+         </loc:payment>
+      </loc:addPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8cecf992-3166-4594-b825-fbe0e2ac1a71"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getStateAfterInvalidNumber" id="e9715b73-d968-46af-8dbb-3b8433c14bfb"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PaymentPortSoap11</con:interface><con:operation>getPayments</con:operation><con:request name="getStateAfterInvalidNumber" id="47980bcc-34a4-4f02-98cc-edfe50ac3578"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getPaymentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6e050915-5975-42d9-bf9e-ed9c66d9e208"/><con:assertion type="Simple Contains" id="4b75800d-8298-44cc-9035-c0885fe24792" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getPaymentsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

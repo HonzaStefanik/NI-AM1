@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e11c9511-2feb-4b8e-a081-c7e35a633fdf" activeEnvironment="Default" name="am1_03" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="test"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="add-get-delete-get"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="d6a4ba6b-475e-45bf-b54c-b88b3b0da30a" wsaVersion="NONE" name="BookingsPortSoap11" type="wsdl" bindingName="{http://localhost/}BookingsPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/bookings.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/bookings.wsdl"><con:part><con:url>http://localhost:8080/ws/bookings.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://localhost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://localhost/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="updateBookingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="booking" type="tns:booking"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateBookingResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteBookingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteBookingResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addBookingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="booking" type="tns:booking"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addBookingResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBookingsRequest">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getBookingsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="bookings" type="tns:booking"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="booking">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="departureAirport" type="tns:airport"/>
+          <xs:element name="arrivalAirport" type="tns:airport"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="passenger" type="tns:passenger"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="airport">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="time" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="passenger">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="name" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="surname" type="xs:string"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="age" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addBookingResponse">
+    <wsdl:part element="tns:addBookingResponse" name="addBookingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addBookingRequest">
+    <wsdl:part element="tns:addBookingRequest" name="addBookingRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateBookingResponse">
+    <wsdl:part element="tns:updateBookingResponse" name="updateBookingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteBookingResponse">
+    <wsdl:part element="tns:deleteBookingResponse" name="deleteBookingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingsRequest">
+    <wsdl:part element="tns:getBookingsRequest" name="getBookingsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteBookingRequest">
+    <wsdl:part element="tns:deleteBookingRequest" name="deleteBookingRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingsResponse">
+    <wsdl:part element="tns:getBookingsResponse" name="getBookingsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateBookingRequest">
+    <wsdl:part element="tns:updateBookingRequest" name="updateBookingRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BookingsPort">
+    <wsdl:operation name="addBooking">
+      <wsdl:input message="tns:addBookingRequest" name="addBookingRequest"></wsdl:input>
+      <wsdl:output message="tns:addBookingResponse" name="addBookingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBooking">
+      <wsdl:input message="tns:updateBookingRequest" name="updateBookingRequest"></wsdl:input>
+      <wsdl:output message="tns:updateBookingResponse" name="updateBookingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBooking">
+      <wsdl:input message="tns:deleteBookingRequest" name="deleteBookingRequest"></wsdl:input>
+      <wsdl:output message="tns:deleteBookingResponse" name="deleteBookingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookings">
+      <wsdl:input message="tns:getBookingsRequest" name="getBookingsRequest"></wsdl:input>
+      <wsdl:output message="tns:getBookingsResponse" name="getBookingsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookingsPortSoap11" type="tns:BookingsPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addBooking">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addBookingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBooking">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateBookingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBooking">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteBookingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookings">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookingsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookingsPortService">
+    <wsdl:port binding="tns:BookingsPortSoap11" name="BookingsPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="71299a71-62c6-4c88-a691-d5698bdc932c" isOneWay="false" action="" name="addBooking" bindingOperationName="addBooking" type="Request-Response" outputName="addBookingResponse" inputName="addBookingRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="81318456-7ba0-4fcb-9610-4cde1488355c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addBookingRequest>
+         <loc:booking>
+            <loc:id>?</loc:id>
+            <loc:departureAirport>
+               <loc:id>?</loc:id>
+               <loc:departureTime>?</loc:departureTime>
+            </loc:departureAirport>
+            <loc:arrivalAirport>
+               <loc:id>?</loc:id>
+               <loc:departureTime>?</loc:departureTime>
+            </loc:arrivalAirport>
+            <loc:passenger>
+               <loc:name>?</loc:name>
+               <loc:surname>?</loc:surname>
+               <loc:age>?</loc:age>
+            </loc:passenger>
+         </loc:booking>
+      </loc:addBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/BookingsPort/addBookingRequest"/></con:call></con:operation><con:operation id="94c45a9a-636b-4ab1-beb0-f436404acd44" isOneWay="false" action="" name="deleteBooking" bindingOperationName="deleteBooking" type="Request-Response" outputName="deleteBookingResponse" inputName="deleteBookingRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2cc0fe80-b1ce-435d-a93b-dd7c759ed2c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deleteBookingRequest>
+         <loc:id>?</loc:id>
+      </loc:deleteBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/BookingsPort/deleteBookingRequest"/></con:call></con:operation><con:operation id="c0bca0c7-e1c6-4370-8627-33d25ffd0152" isOneWay="false" action="" name="getBookings" bindingOperationName="getBookings" type="Request-Response" outputName="getBookingsResponse" inputName="getBookingsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="98b60f6f-ef78-450a-bb76-eb56c11c70ef" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/BookingsPort/getBookingsRequest"/></con:call></con:operation><con:operation id="8ef40854-6194-44ce-8f2e-a37855f4e352" isOneWay="false" action="" name="updateBooking" bindingOperationName="updateBooking" type="Request-Response" outputName="updateBookingResponse" inputName="updateBookingRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="69f6c89b-49cf-41bb-b45d-745e434ff97a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:updateBookingRequest>
+         <loc:booking>
+            <loc:id>?</loc:id>
+            <loc:departureAirport>
+               <loc:id>?</loc:id>
+               <loc:departureTime>?</loc:departureTime>
+            </loc:departureAirport>
+            <loc:arrivalAirport>
+               <loc:id>?</loc:id>
+               <loc:departureTime>?</loc:departureTime>
+            </loc:arrivalAirport>
+            <loc:passenger>
+               <loc:name>?</loc:name>
+               <loc:surname>?</loc:surname>
+               <loc:age>?</loc:age>
+            </loc:passenger>
+         </loc:booking>
+      </loc:updateBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost/BookingsPort/updateBookingRequest"/></con:call></con:operation></con:interface><con:testSuite id="d70ceb83-30e2-443f-9913-5e5a8c3612f1" name="test"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="4ddb4c83-0598-4cfa-9c35-40157e155af5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="add-get-delete-get" searchProperties="true"><con:settings/><con:testStep type="request" name="getInitialState" id="9b8c6e12-6723-403e-8a86-a081ae2880af"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getInitialState" id="f6f5a7f1-b2d6-46ed-88a5-52465071bfa5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6a091542-ec90-4e69-bfd4-38b84c5a509e"/><con:assertion type="Simple Contains" id="cd073c23-88e0-4fbb-b4c0-44cf88ab5b27" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="addBooking" id="b1c571e0-1c20-4b4f-9eb3-30c60162ab05"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>addBooking</con:operation><con:request name="addBooking" id="fdee878b-38bd-4404-a53f-969758a7fc1d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addBookingRequest>
+         <loc:booking>
+            <loc:id>1</loc:id>
+            <loc:departureAirport>
+               <loc:id>10</loc:id>
+               <loc:time>2020-10-26T21:32:52</loc:time>
+            </loc:departureAirport>
+            <loc:arrivalAirport>
+               <loc:id>20</loc:id>
+               <loc:time>2020-10-26T22:32:52</loc:time>
+            </loc:arrivalAirport>
+            <loc:passenger>
+               <loc:name>test</loc:name>
+               <loc:surname>passenger</loc:surname>
+               <loc:age>25</loc:age>
+            </loc:passenger>
+         </loc:booking>
+      </loc:addBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a0acd9e9-0477-45dd-9268-9129c2a37336"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getNewState" id="bd4b4250-25e1-4568-a337-7fbb570848e0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getNewState" id="c9a920c3-c334-468e-9e9b-67b73db0b723"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b8873e13-e871-4c2b-bfa4-9975d2e088b7"/><con:assertion type="Simple Contains" id="16055a13-b0a6-4db9-a1d9-4ce2b441783f" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/">
+         <ns2:bookings>
+            <ns2:id>1</ns2:id>
+            <ns2:departureAirport>
+               <ns2:id>10</ns2:id>
+               <ns2:time>2020-10-26T21:32:52</ns2:time>
+            </ns2:departureAirport>
+            <ns2:arrivalAirport>
+               <ns2:id>20</ns2:id>
+               <ns2:time>2020-10-26T22:32:52</ns2:time>
+            </ns2:arrivalAirport>
+            <ns2:passenger>
+               <ns2:name>test</ns2:name>
+               <ns2:surname>passenger</ns2:surname>
+               <ns2:age>25</ns2:age>
+            </ns2:passenger>
+         </ns2:bookings>
+      </ns2:getBookingsResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="deleteBooking" id="7215ef39-5bae-45d9-9c03-d2383923cf01"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>deleteBooking</con:operation><con:request name="deleteBooking" id="b696ed9a-e836-4ac6-9111-4fe93b9bd4fc"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deleteBookingRequest>
+         <loc:id>1</loc:id>
+      </loc:deleteBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="25bfb08b-63de-4a3f-8461-7f963b4f3700"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getFinalState" id="54073480-9966-4e88-aead-d8a2ee7e49cf"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getFinalState" id="6b1f425c-ad53-4e52-a47e-40f5707e9b9d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="0f778897-1885-44c3-bcf1-215c0d3415e5"/><con:assertion type="Simple Contains" id="e4099d78-0211-4460-8eb6-e4a3460b2cbe" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7d5fe150-4813-4640-8540-4763994145e9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="add-get-update-get-delete" searchProperties="true"><con:settings/><con:testStep type="request" name="getInitialState" id="7ee99f9f-4291-4bfc-9977-35a9d605e678"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getInitialState" id="f6f5a7f1-b2d6-46ed-88a5-52465071bfa5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6a091542-ec90-4e69-bfd4-38b84c5a509e"/><con:assertion type="Simple Contains" id="cd073c23-88e0-4fbb-b4c0-44cf88ab5b27" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/"/>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="addBooking" id="414b7603-39cf-4bee-92c4-90146f2e0747"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>addBooking</con:operation><con:request name="addBooking" id="fdee878b-38bd-4404-a53f-969758a7fc1d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:addBookingRequest>
+         <loc:booking>
+            <loc:id>1</loc:id>
+            <loc:departureAirport>
+               <loc:id>10</loc:id>
+               <loc:time>2020-10-26T21:32:52</loc:time>
+            </loc:departureAirport>
+            <loc:arrivalAirport>
+               <loc:id>20</loc:id>
+               <loc:time>2020-10-26T22:32:52</loc:time>
+            </loc:arrivalAirport>
+            <loc:passenger>
+               <loc:name>test</loc:name>
+               <loc:surname>passenger</loc:surname>
+               <loc:age>25</loc:age>
+            </loc:passenger>
+         </loc:booking>
+      </loc:addBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a0acd9e9-0477-45dd-9268-9129c2a37336"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getNewState" id="41591d3d-51e8-44ba-bea6-368a590bf9f9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getNewState" id="c9a920c3-c334-468e-9e9b-67b73db0b723"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b8873e13-e871-4c2b-bfa4-9975d2e088b7"/><con:assertion type="Simple Contains" id="16055a13-b0a6-4db9-a1d9-4ce2b441783f" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/">
+         <ns2:bookings>
+            <ns2:id>1</ns2:id>
+            <ns2:departureAirport>
+               <ns2:id>10</ns2:id>
+               <ns2:time>2020-10-26T21:32:52</ns2:time>
+            </ns2:departureAirport>
+            <ns2:arrivalAirport>
+               <ns2:id>20</ns2:id>
+               <ns2:time>2020-10-26T22:32:52</ns2:time>
+            </ns2:arrivalAirport>
+            <ns2:passenger>
+               <ns2:name>test</ns2:name>
+               <ns2:surname>passenger</ns2:surname>
+               <ns2:age>25</ns2:age>
+            </ns2:passenger>
+         </ns2:bookings>
+      </ns2:getBookingsResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="updateBooking" id="2e79a48c-5c78-4a57-84b8-bc8c106c9b9f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>updateBooking</con:operation><con:request name="updateBooking" id="76102e3b-c5e8-4169-83a9-08caf176dedd"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:updateBookingRequest>
+         <loc:booking>
+            <loc:id>1</loc:id>
+            <loc:departureAirport>
+               <loc:id>10</loc:id>
+               <loc:time>2020-10-26T21:32:52</loc:time>
+            </loc:departureAirport>
+            <loc:arrivalAirport>
+               <loc:id>20</loc:id>
+               <loc:time>2020-10-26T22:32:52</loc:time>
+            </loc:arrivalAirport>
+            <loc:passenger>
+               <loc:name>test</loc:name>
+               <loc:surname>surname update</loc:surname>
+               <loc:age>25</loc:age>
+            </loc:passenger>
+         </loc:booking>
+      </loc:updateBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="32d8dd18-fa1c-4706-bdef-9d674225a2f3"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getUpdatedState" id="1ff3919e-8e6a-4651-b04e-a015342b629a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>getBookings</con:operation><con:request name="getUpdatedState" id="2f68376c-3e2d-4ce7-a2c9-cd7fe797fc76"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:getBookingsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6ded914d-ab56-479f-bea7-8ae629107a1b"/><con:assertion type="Simple Contains" id="713c2525-e0df-4d5a-9867-6c9846715927" name="Contains"><con:configuration><token><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:getBookingsResponse xmlns:ns2="http://localhost/">
+         <ns2:bookings>
+            <ns2:id>1</ns2:id>
+            <ns2:departureAirport>
+               <ns2:id>10</ns2:id>
+               <ns2:time>2020-10-26T21:32:52</ns2:time>
+            </ns2:departureAirport>
+            <ns2:arrivalAirport>
+               <ns2:id>20</ns2:id>
+               <ns2:time>2020-10-26T22:32:52</ns2:time>
+            </ns2:arrivalAirport>
+            <ns2:passenger>
+               <ns2:name>test</ns2:name>
+               <ns2:surname>surname update</ns2:surname>
+               <ns2:age>25</ns2:age>
+            </ns2:passenger>
+         </ns2:bookings>
+      </ns2:getBookingsResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="deleteBooking" id="2873a625-2a5c-4dd0-9dd4-f68d9f5343cf"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BookingsPortSoap11</con:interface><con:operation>deleteBooking</con:operation><con:request name="deleteBooking" id="a64cdb94-92d5-46d3-b49f-e7f6a19fb513"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://localhost/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deleteBookingRequest>
+         <loc:id>1</loc:id>
+      </loc:deleteBookingRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9bdea9a2-62b6-4c66-a983-4d5fe57721ec"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

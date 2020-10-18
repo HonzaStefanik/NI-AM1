@@ -104,6 +104,8 @@ Here is the SOAP format to perform these operations
 
 SoapUI was used to test the application. All 4 CRUD operations are tested in 2 test cases.
 
+The exported SoapUI project can be found [in the results directory](results/am1_03-soapui-project.xml)
+
 You can see both test cases passing with all steps included
  
  ![image](src/test/resources/soapui_test_cases.png)
