@@ -1,4 +1,4 @@
-# HW3 - 3. Web Services
+# HW3 - Web Services
 
 ## Task
 

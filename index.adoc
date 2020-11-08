@@ -2,8 +2,8 @@
 
 * xref:01/index.md#[1. Integration Issues - Transformation of formats]
 * xref:02/index.md#[2. HTTP Application Protocol - telnet, openssl, cURL]
-* xref:03/index#[]
-* xref:04/index#[]
+* xref:03/index.md#[3. Web services]
+* xref:04/index.md#[4. Web service composition]
 * xref:05/index#[]
 * xref:06/index#[]
 * xref:07/index#[]
