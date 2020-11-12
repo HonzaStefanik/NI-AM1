@@ -43,7 +43,7 @@ public class TourController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tour with id " + id + " was not found");
         }
         if (inProgress.isPresent()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Tour with id " + id + " is already in progress of being deleted");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Tour with id " + id + " is already in process of being deleted");
         }
         log.info("Delete process started for tour id=" + id);
         new Thread(() -> deleteTour(toBeDeleted.get())).start();

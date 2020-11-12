@@ -22,19 +22,21 @@ GET /tour - list all tours
     * returns 200 OK
 
 DELETE /tour/{id} - delete tour asynchronously
+    * returns 200 OK, 404 NOT FOUND, 400 BAD REQUEST
+    * 404 is returned when a tour with given ID does not exist
+    * 400 is returned when a tour with given ID already is in the process of being deleted
+
+GET /tour/delete-status - lists statuses of all tours marked for deletion
+    * returns 200 OK
+
+GET /tour/delete-status/{id} - displays status of a given tour marked for deletion
     * returns 200 OK, 404 NOT FOUND
-
-GET /tour/delete-status - lists status of all tours marked for deletion
-    * returns 200 OK
-
-GET /tour/delete-status/{id} - displays status of a given tour marked for deleteion
-    * returns 200 OK
 ```
 
-When the DELETE endpoint is called, it will immediately return HTTP 201 and a header Location with content '/tour/delete-status/{id}' (id from request).
+When the DELETE endpoint is called, it will immediately return HTTP 201 and the Location header with content '/tour/delete-status/{id}' (id from request).
 
 The tour wont be deleted until 10 seconds pass from the request creation.
 
-During this time, it will be in GET /tour endpoint and it will also be visible in both delete-status endpoints with status IN_PROGRESS.
+During this time, it will be visible in GET /tour endpoint and it will also be visible in both delete-status endpoints with status IN_PROGRESS.
 
-After 10 seconds pass, it will no longer be seen in GET /tour and it will have status DELETED in delete-status endpoints.
+After 10 seconds pass, it will no longer be available in GET /tour and it will have status DELETED in delete-status endpoints.
