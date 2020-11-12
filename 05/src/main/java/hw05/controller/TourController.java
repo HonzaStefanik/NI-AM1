@@ -26,7 +26,7 @@ public class TourController {
         this.repository = repository;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public CollectionModel<Tour> getTours(@RequestParam(value = "country", required = false) String countryId) {
         List<Tour> tours = repository.getTours();
         if (countryId != null) {
@@ -67,7 +67,7 @@ public class TourController {
     }
 
 
-    @PostMapping(value = "/")
+    @PostMapping
     public ResponseEntity createTour(@RequestBody Tour tour) {
         repository.addTour(tour);
         return ResponseEntity.status(HttpStatus.CREATED).header("Location", "/country/" + tour.getId()).build();

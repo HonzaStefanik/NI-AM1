@@ -24,7 +24,7 @@ public class CountryController {
         this.repository = repository;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public CollectionModel<Country> getCountries() {
         List<Country> countries = repository.getCountries();
         CollectionModel<Country> response = CollectionModel.of(countries);
@@ -49,7 +49,7 @@ public class CountryController {
         return ResponseEntity.status(HttpStatus.OK).body(country);
     }
 
-    @PostMapping(value = "/")
+    @PostMapping
     public ResponseEntity createCountry(@RequestBody Country country) {
         repository.addCountry(country);
         return ResponseEntity.status(HttpStatus.CREATED).header("Location", "/country/" + country.getId()).build();

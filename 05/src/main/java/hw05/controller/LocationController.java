@@ -24,7 +24,7 @@ public class LocationController {
         this.repository = repository;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public CollectionModel<Location> getLocations() {
         List<Location> locations = repository.getLocations();
         CollectionModel<Location> response = CollectionModel.of(locations);
@@ -49,7 +49,7 @@ public class LocationController {
         return ResponseEntity.status(HttpStatus.OK).body(location);
     }
 
-    @PostMapping(value = "/")
+    @PostMapping
     public ResponseEntity createLocation(@RequestBody Location location) {
         repository.addLocation(location);
         return ResponseEntity.status(HttpStatus.CREATED).header("Location", "/location/" + location.getId()).build();

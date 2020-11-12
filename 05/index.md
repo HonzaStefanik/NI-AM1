@@ -34,7 +34,8 @@ The API is documented via Swagger UI
 
  * http://localhost:8080/v3/api-docs (api documentation)
  
-In general, the status codes will be 200 if operation was successful and 404 if a requested entity was not found (eg GET /country/nonExistentId).
+In general, the status codes will be 200 if operation was successful and 404 if a requested entity was not found (eg GET /country/nonExistentId). 
+The only exception are PUT mappings which will create the entity if it is not found.
 
 >At least one resource should provide filtering using query string parameter
 

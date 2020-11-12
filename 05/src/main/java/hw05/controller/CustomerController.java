@@ -24,7 +24,7 @@ public class CustomerController {
         this.repository = repository;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public CollectionModel<Customer> getCustomers() {
         List<Customer> customers = repository.getCustomers();
         CollectionModel<Customer> response = CollectionModel.of(customers);
@@ -48,7 +48,7 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.OK).body(customer);
     }
 
-    @PostMapping(value = "/")
+    @PostMapping
     public ResponseEntity createCustomer(@RequestBody Customer customer) throws NotFoundException {
         List<Integer> tours = customer.getTours();
         for (Integer tourId : tours) {
