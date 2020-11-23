@@ -6,7 +6,7 @@
 * xref:04/index.md#[4. Web service composition]
 * xref:05/index.md#[5. RESTful API Design - resources, URIs, operations]
 * xref:06/index.md#[6. RESTfull - Asynchronous operation]
-* xref:07/index#[]
+* xref:07/index.md#[# HW7 - RESTfull - Conditional GET]
 * xref:08/index#[]
 * xref:09/index#[]
 * xref:10/index#[]
