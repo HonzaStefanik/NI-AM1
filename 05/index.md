@@ -33,6 +33,12 @@ There are also some things which were affected by auto-generating the documentat
 For example, all endpoints have listed 404 as a possible return status code due to global exception handler.
 This is obviously not true for all endpoints - eg GET /tour will never return a 404. 
 
+It is also displayed that an id can be included in a POST request (creating resource). 
+If it were a real application, this would not be possible, the entity would be created via a DTO and transformed into the actual entity.
+It was kept as one thing due to the nature of the task
+
+### API
+
 The API is documented via Swagger UI
  
  * http://localhost:8080/swagger-ui/index.html (swagger)
