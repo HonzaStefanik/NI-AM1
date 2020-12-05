@@ -72,7 +72,7 @@ public class CustomerController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteCustomer(@PathVariable int id) throws NotFoundException {
+    public ResponseEntity deleteCustomer(@PathVariable int id) throws NotFoundException {
         Customer customer = repository.getCustomersById(id);
         List<Integer> tours = customer.getTours();
         for (Integer tourId : tours) {
@@ -80,6 +80,7 @@ public class CustomerController {
             t.getCustomers().add(customer.getId());
         }
         repository.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping(value = "/{id}/tours")

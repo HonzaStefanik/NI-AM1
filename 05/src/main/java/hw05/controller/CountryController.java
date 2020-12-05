@@ -69,8 +69,10 @@ public class CountryController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteCountry(@PathVariable String id) throws NotFoundException {
+    public ResponseEntity deleteCountry(@PathVariable String id) throws NotFoundException {
         repository.deleteCountry(id);
+        return ResponseEntity.noContent().build();
+
     }
 
     @GetMapping(value = "/{id}/locations")

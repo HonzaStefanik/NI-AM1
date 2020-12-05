@@ -26,7 +26,12 @@ Do not forget to include HATEOAS principles
 
 ## Solution
 
-### TODO - custom base uri 
+Note: I misunderstood the assignment and implemented the service as a whole instead of just documenting the API.
+The documentation still exists, however, the app has to be run and it can be found as described below.
+
+There are also some things which were affected by auto-generating the documentation.
+For example, all endpoints have listed 404 as a possible return status code due to global exception handler.
+This is obviously not true for all endpoints - eg GET /tour will never return a 404. 
 
 The API is documented via Swagger UI
  

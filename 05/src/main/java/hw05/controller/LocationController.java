@@ -67,7 +67,8 @@ public class LocationController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteLocation(@PathVariable String id) throws NotFoundException {
+    public ResponseEntity deleteLocation(@PathVariable String id) throws NotFoundException {
         repository.deleteLocation(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -85,11 +85,12 @@ public class TourController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteTour(@PathVariable int id) throws NotFoundException {
+    public ResponseEntity deleteTour(@PathVariable int id) throws NotFoundException {
         repository.deleteTour(id);
+        return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(value = "/{id}/customers")
+    @GetMapping(value = "/{id}/customer")
     public CollectionModel<Customer> getTourCustomers(@PathVariable int id) throws NotFoundException {
         List<Customer> customers = repository.getCustomersByTourId(id);
         CollectionModel<Customer> response = CollectionModel.of(customers);
@@ -98,6 +99,15 @@ public class TourController {
             customer.add(linkTo(CustomerController.class).slash(customer.getId()).withRel("DETAIL"));
         }
         return response;
+    }
+
+    @PostMapping(value = "{id}/customer")
+    public ResponseEntity add(@PathVariable int tourId, @RequestBody Integer customerId) throws NotFoundException {
+        Tour tour = repository.getTourById(tourId);
+        Customer customer = repository.getCustomersById(customerId);
+        tour.getCustomers().add(customer.getId());
+        customer.getTours().add(tour.getId());
+        return ResponseEntity.ok().build();
     }
 
 }
