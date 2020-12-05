@@ -69,7 +69,7 @@ public class TourController {
         if (toBeDeleted.isPresent()) {
             tours.remove(toBeDeleted.get());
             lastModified = ZonedDateTime.now();
-            return ResponseEntity.ok().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
     }
